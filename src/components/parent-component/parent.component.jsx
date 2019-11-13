@@ -4,12 +4,18 @@ import Regular from '../regular-component/regular.component';
 
 class ParentComponent extends Component {
     state = { name: 'Devvrat' };
+    intervalId = null;
 
     componentDidMount = () => {
-        setInterval(() => {
+        this.intervalId = setInterval(() => {
             this.setState({ name: 'Devvrat' });
             console.log('-----');
         }, 2000);
+    };
+
+    componentWillUnmount = () => {
+        console.log('ParentComponent unmounted.');
+        clearInterval(this.intervalId);
     };
 
     render() {
