@@ -14,12 +14,12 @@ class ParentComponent extends Component {
 
     render() {
         console.log('ParentComponent Rendered.');
-
+        const { name } = this.state;
         return (
             <div>
-                <span>Hi {this.state.name}, I am a Parent Component.</span>
-                <Pure name={this.state.name} />
-                <Regular name={this.state.name} />
+                <span>Hi {name}, I am a Parent Component.</span>
+                <Pure name={name} />
+                <Regular name={name} />
             </div>
         );
     }
